@@ -20,7 +20,7 @@ const SignupForm = () => {
         password: passwordRef.current.value,
       };
       const response = await axios.post(
-        "http://localhost:5000/Signup",
+        "http://34.230.16.104:5000/Signup",
         userData,{returnSecureToken:true}
       );
       if (response.status === 201) {

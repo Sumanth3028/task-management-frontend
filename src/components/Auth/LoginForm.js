@@ -19,7 +19,7 @@ const LoginForm = () => {
         password: passwordRef.current.value,
       };
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "http://34.230.16.104:5000/login",
         userData
       );
       if (response.data.success === true) {
