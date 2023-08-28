@@ -45,7 +45,7 @@ const TaskList = (props) => {
       const description = document.getElementById("description").value;
       const taskData = { title, description };
       const response = await axios.post(
-        "http://54.211.203.191:4000/postTasks",
+        "http://54.211.203.191:5000/postTasks",
         taskData,
         { headers: { Authorization: localStorage.getItem("token") } }
       );
@@ -72,12 +72,12 @@ const TaskList = (props) => {
   const [open, setOpen] = useState(true);
 
   const markedAsDoneHandler = async (id) => {
-    const response = await axios.post(`http://54.211.203.191:4000/marked/${id}`);
+    const response = await axios.post(`http://54.211.203.191:5000/marked/${id}`);
     getData();
   };
 
   const deleteHandler = async (id) => {
-    const response = await axios.post(`http://54.211.203.191:4000/delete/${id}`);
+    const response = await axios.post(`http://54.211.203.191:5000/delete/${id}`);
     getData();
   };
 
@@ -90,7 +90,7 @@ const TaskList = (props) => {
     try {
       const editedData = { title: titled, description: desc };
       const res = await axios.post(
-        `http://54.211.203.191:4000/editTasks/${id}`,
+        `http://54.211.203.191:5000/editTasks/${id}`,
         editedData
       );
       toast.success("Sucessfully edited!")
