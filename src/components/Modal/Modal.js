@@ -10,8 +10,8 @@ const Modal = ({ isOpen, onClose, children }) => {
        
        {children}
 
-       <button className="absolute top-2 right-2 text-black" onClick={onClose}>
-          Close
+       <button className="absolute top-2 right-2 text-lg text-black" onClick={onClose}>
+          close
         </button>
       
     </div>
